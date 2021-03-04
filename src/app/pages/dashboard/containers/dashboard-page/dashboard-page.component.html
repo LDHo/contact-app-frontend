@@ -1,0 +1,61 @@
+<app-layout>
+    <mat-toolbar class="page-header" role="heading">
+        <h1>Contact Form</h1>
+    </mat-toolbar>
+    <div class="charts-wrapper">
+        <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+            <table class="example-full-width" cellspacing="1">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input matInput placeholder="Lian De" type="text" formControlName="lastName">
+                            <mat-error>{{ errors.lastName }}</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>First name</mat-label>
+                            <input matInput placeholder="Ho" type="text" formControlName="firstName">
+                            <mat-error>{{ errors.firstName }}</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+
+
+            <table class="example-full-width" cellspacing="1">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Email Address</mat-label>
+                            <input matInput placeholder="youremail@email.com" type="email" formControlName="email">
+                            <mat-error>{{ errors.email }}</mat-error>
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Birthday</mat-label>
+                            <input matInput [matDatepicker]="picker" formControlName="birthday">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="example-full-width" cellspacing="1">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" appearance="outline">
+                            <mat-label>Social Security Number</mat-label>
+                            <input matInput placeholder="Type" formControlName="socialSecurityNumber" placeholder="###-##-####">
+                            <mat-error>{{ errors.socialSecurityNumber }}</mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <button mat-flat-button color="warn">Submit</button>
+        </form>
+    </div>
+</app-layout>
